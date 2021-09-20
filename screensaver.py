@@ -8,16 +8,17 @@ import random as rdm
 pg.init()
 
 # WINDOW
-WIDTH, HEIGHT = 1920, 1080
+winfo =  pg.display.Info()
+WIDTH, HEIGHT = winfo.current_w, winfo.current_h
 WIN = pg.display.set_mode((WIDTH, HEIGHT))
 pg.display.set_caption("DVD Screensaver")
-FPS = 60
+FPS = 120
 
 # COLORS
 BLACK = (0, 0, 0)
 
 # LOGO STUFF
-L_WIDTH, L_HEIGHT = 200, 100
+L_WIDTH, L_HEIGHT = WIDTH//10, HEIGHT//10
 LOGO_IMG = pg.image.load(
     os.path.join('images', 'dvd_pink.png'))
 LOGO_RECT = pg.transform.rotate(
@@ -85,7 +86,6 @@ def move_logo(logo):
 
 def main():
     # Generate the logos starting point, init logo
-    # x, y, = 1000, 500     # Corner hit within the first couple of bounces :)
     x, y = rdm.randrange(0, WIDTH-L_WIDTH), rdm.randrange(0, HEIGHT-L_HEIGHT) # Random starting point
     logo = Logo(L_WIDTH, L_HEIGHT, x, y)
 
