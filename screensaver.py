@@ -10,6 +10,7 @@ pg.init()
 # WINDOW
 WIDTH, HEIGHT = 1920, 1080
 WIN = pg.display.set_mode((WIDTH, HEIGHT))
+pg.display.set_caption("DVD Screensaver")
 FPS = 60
 
 # COLORS
@@ -18,7 +19,7 @@ BLACK = (0, 0, 0)
 # LOGO STUFF
 L_WIDTH, L_HEIGHT = 200, 100
 LOGO_IMG = pg.image.load(
-    os.path.join('images', 'dvd.png'))
+    os.path.join('images', 'dvd_pink.png'))
 LOGO_RECT = pg.transform.rotate(
     pg.transform.scale(LOGO_IMG, (L_WIDTH, L_HEIGHT)), 0)
 
